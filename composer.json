@@ -1,0 +1,14 @@
+{
+  "name": "a3t-ventures/settlehub-landing",
+  "description": "A3T Ventures - Settlehub Landing Page",
+  "type": "project",
+  "require": {
+    "php": ">=7.4"
+  },
+  "scripts": {
+    "post-install-cmd": [
+      "npm install",
+      "npm run build"
+    ]
+  }
+}
