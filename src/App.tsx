@@ -42,7 +42,10 @@ function App() {
             </div>
             
             <div className="flex flex-wrap gap-4">
-              <button className="bg-[#f4d35e] hover:bg-[#f9cc3d] text-[#1f1f1f] font-semibold px-8 py-4 rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg flex items-center gap-2">
+              <button
+                className="bg-[#f4d35e] hover:bg-[#f9cc3d] text-[#1f1f1f] font-semibold px-8 py-4 rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg flex items-center gap-2"
+                onClick={() => document.getElementById('proof-of-concept')?.scrollIntoView({ behavior: 'smooth' })}
+              >
                 <Building size={20} />
                 Explore Properties
               </button>
@@ -185,7 +188,7 @@ function App() {
       </section>
 
       {/* Live Portfolio Section */}
-      <section className="py-20 px-6 bg-white">
+      <section id="proof-of-concept" className="py-20 px-6 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-[#1f1f1f] mb-4">🏠 Our Proof of Concept is Already Live</h2>
@@ -579,10 +582,10 @@ function App() {
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
-              { name: 'Aditya Sharma', role: 'CEO & Co-founder', image: 'https://images.pexels.com/photos/2182970/pexels-photo-2182970.jpeg?auto=compress&cs=tinysrgb&w=400' },
-              { name: 'Priya Patel', role: 'CTO & Co-founder', image: 'https://images.pexels.com/photos/1130626/pexels-photo-1130626.jpeg?auto=compress&cs=tinysrgb&w=400' },
-              { name: 'Rahul Kumar', role: 'COO & Co-founder', image: 'https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=400' },
-              { name: 'Sneha Reddy', role: 'CFO & Co-founder', image: 'https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=400' }
+              { name: 'Aditya Tathagath', role: 'CEO & Co-founder', image: '../media/aditya_photo.jpg' },
+              { name: 'Ajay Patel', role: 'CTO & Co-founder', image: '../media/ajay_photo.jpg' },
+              { name: 'Ankit Kumar', role: 'COO & Co-founder', image: '../media/ankit_photo.jpg' },
+              { name: 'Tanuj Bhatt', role: 'CFO & Co-founder', image: '../media/tanuj_photo.jpg' }
             ].map((member, index) => (
               <div key={index} className="bg-white p-6 rounded-2xl shadow-lg text-center hover:shadow-xl transition-all duration-300">
                 <div className="relative mb-6">
@@ -630,7 +633,7 @@ function App() {
                 <Mail size={24} className="text-[#1f1f1f]" />
               </div>
               <h3 className="font-semibold mb-2">Email</h3>
-              <p className="text-gray-300">📧 settlehub@a3tventures.in</p>
+              <p className="text-gray-300">📧 foundersoffice@settlehub.com</p>
             </div>
             
             <div className="text-center">
@@ -639,7 +642,7 @@ function App() {
               </div>
               <h3 className="font-semibold mb-2">Websites</h3>
               <p className="text-gray-300">🌐 a3tventures.com</p>
-              <p className="text-gray-300">🌐 thesettlehub.in</p>
+              <p className="text-gray-300">🌐 thesettlehub.com</p>
             </div>
             
             <div className="text-center">
