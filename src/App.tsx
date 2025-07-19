@@ -35,7 +35,7 @@ function App() {
                   We own the homes. You earn the returns. Tenants love the experience.
                   <br />
                   <span className="font-semibold text-[#1f1f1f]">
-                    Welcome to A3T Ventures — where real estate meets tech, trust, and transparency.
+                    Welcome to TheSettleHub — where real estate meets tech, trust, and transparency.
                   </span>
                 </p>
               </div>
@@ -82,7 +82,7 @@ function App() {
             <h2 className="text-4xl font-bold text-[#1f1f1f] mb-4">
               🛑 Brokers. 🧱 Broken Rentals. 🏃‍♂️ No Accountability.
             </h2>
-            <p className="text-2xl font-semibold text-[#f4d35e]">✅ A3T = The Full-Stack Fix</p>
+            <p className="text-2xl font-semibold text-[#f4d35e]">✅ TheSettleHub = The Full-Stack Fix</p>
           </div>
           
           <div className="grid lg:grid-cols-2 gap-12">
@@ -526,7 +526,7 @@ function App() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-[#1f1f1f] mb-4">🔓 How You Can Join</h2>
-            <p className="text-xl text-[#4a4a4a]">Multiple ways to be part of the A3T ecosystem</p>
+            <p className="text-xl text-[#4a4a4a]">Multiple ways to be part of the TheSettleHub ecosystem</p>
           </div>
           
           <div className="grid md:grid-cols-3 gap-8">
@@ -562,7 +562,7 @@ function App() {
               </div>
               <h3 className="text-2xl font-bold text-[#1f1f1f] mb-4">Property Sellers</h3>
               <p className="text-[#4a4a4a] mb-6 leading-relaxed">
-                🏘 Sell your rental-ready home to A3T. Get fair pricing and quick, transparent transactions.
+                🏘 Sell your rental-ready home to TheSettleHub. Get fair pricing and quick, transparent transactions.
               </p>
               <button className="bg-[#f4d35e] hover:bg-[#f9cc3d] text-[#1f1f1f] font-semibold px-6 py-3 rounded-xl transition-all duration-300 flex items-center gap-2 mx-auto">
                 I Want In <ChevronRight size={20} />
@@ -577,15 +577,15 @@ function App() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-[#1f1f1f] mb-4">👨‍👩‍👧‍👦 Meet the Team</h2>
-            <p className="text-xl text-[#4a4a4a]">The visionaries behind A3T Ventures</p>
+            <p className="text-xl text-[#4a4a4a]">The visionaries behind The Settle Hub</p>
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
               { name: 'Aditya Tathagath', role: 'CEO & Co-founder', image: '../media/aditya_photo.jpg' },
-              { name: 'Ajay Patel', role: 'CTO & Co-founder', image: '../media/ajay_photo.jpg' },
-              { name: 'Ankit Kumar', role: 'COO & Co-founder', image: '../media/ankit_photo.jpg' },
-              { name: 'Tanuj Bhatt', role: 'CFO & Co-founder', image: '../media/tanuj_photo.jpg' }
+              { name: 'Ajay Patel', role: 'CTO & Co-founder', image: '/media/ajay_photo.jpg' },
+              { name: 'Ankit Kumar', role: 'COO & Co-founder', image: '/media/ankit_photo.jpg' },
+              { name: 'Tanuj Bhatt', role: 'CFO & Co-founder', image: '/media/tanuj_photo.jpg' }
             ].map((member, index) => (
               <div key={index} className="bg-white p-6 rounded-2xl shadow-lg text-center hover:shadow-xl transition-all duration-300">
                 <div className="relative mb-6">
