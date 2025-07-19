@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Home, TrendingUp, Users, MapPin, Phone, Mail, Globe, ChevronRight, Building, Smartphone, Wrench, IndianRupee, CheckCircle, XCircle, ArrowRight, Download, Presentation as PresentationChart, Key, DollarSign, Star, ChevronLeft, Play, Clock } from 'lucide-react';
+import GrowthProjectionChart from './components/GrowthProjectionChart';
 
 function App() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -432,91 +433,11 @@ function App() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-[#1f1f1f] mb-4">📈 Investor Proposition</h2>
-            <p className="text-2xl font-semibold text-[#f4d35e]">How ₹10 Cr Becomes ₹250 Cr</p>
+            <p className="text-2xl font-semibold text-[#f4d35e]">Investment ask: ₹10 Cr</p>
           </div>
           
           <div className="bg-white p-8 rounded-2xl shadow-lg">
-            <div className="grid md:grid-cols-3 gap-8 mb-8">
-              <div className="text-center">
-                <div className="w-20 h-20 bg-[#f4d35e] rounded-full flex items-center justify-center mx-auto mb-4">
-                  <TrendingUp size={40} className="text-[#1f1f1f]" />
-                </div>
-                <h3 className="text-xl font-bold text-[#1f1f1f] mb-2">Yearly Rental Income</h3>
-                <p className="text-3xl font-bold text-[#f4d35e]">₹60L+</p>
-                <p className="text-[#4a4a4a] mt-2">6-8% consistent yields</p>
-              </div>
-              
-              <div className="text-center">
-                <div className="w-20 h-20 bg-[#f4d35e] rounded-full flex items-center justify-center mx-auto mb-4">
-                  <IndianRupee size={40} className="text-[#1f1f1f]" />
-                </div>
-                <h3 className="text-xl font-bold text-[#1f1f1f] mb-2">Net Profit Margin</h3>
-                <p className="text-3xl font-bold text-green-600">35%+</p>
-                <p className="text-[#4a4a4a] mt-2">After all expenses</p>
-              </div>
-              
-              <div className="text-center">
-                <div className="w-20 h-20 bg-[#f4d35e] rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Building size={40} className="text-[#1f1f1f]" />
-                </div>
-                <h3 className="text-xl font-bold text-[#1f1f1f] mb-2">Capital Deployed</h3>
-                <p className="text-3xl font-bold text-[#1f1f1f]">₹10 Cr</p>
-                <p className="text-[#4a4a4a] mt-2">Strategic property acquisition</p>
-              </div>
-            </div>
-            
-            <div className="bg-[#f4d35e]/10 p-6 rounded-xl">
-              <h4 className="text-lg font-bold text-[#1f1f1f] mb-4">5-Year Growth Projection</h4>
-              <div className="relative">
-                <div className="flex items-end justify-between h-48 mb-4">
-                  {[
-                    { year: 'Year 1', value: '₹10 Cr', height: 20 },
-                    { year: 'Year 2', value: '₹25 Cr', height: 40 },
-                    { year: 'Year 3', value: '₹75 Cr', height: 80 },
-                    { year: 'Year 4', value: '₹150 Cr', height: 120 },
-                    { year: 'Year 5', value: '₹250 Cr', height: 160 }
-                  ].map((item, index) => (
-                    <div key={index} className="flex flex-col items-center flex-1">
-                      <div className="relative w-full max-w-16 mx-auto">
-                        <div 
-                          className="bg-gradient-to-t from-[#f4d35e] to-[#f9cc3d] rounded-t-lg transition-all duration-1000 ease-out shadow-lg"
-                          style={{ height: `${item.height}px` }}
-                        ></div>
-                        <div className="absolute -top-8 left-1/2 transform -translate-x-1/2 bg-white px-2 py-1 rounded shadow-md border border-[#f4d35e]/30">
-                          <span className="text-xs font-bold text-[#1f1f1f] whitespace-nowrap">{item.value}</span>
-                        </div>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-                <div className="grid grid-cols-5 gap-4">
-                {[
-                  { year: 'Year 1', value: '₹10 Cr' },
-                  { year: 'Year 2', value: '₹25 Cr' },
-                  { year: 'Year 3', value: '₹75 Cr' },
-                  { year: 'Year 4', value: '₹150 Cr' },
-                  { year: 'Year 5', value: '₹250 Cr' }
-                ].map((item, index) => (
-                  <div key={index} className="text-center border-t-2 border-gray-300 pt-2">
-                    <p className="text-sm font-semibold text-[#1f1f1f]">{item.year}</p>
-                  </div>
-                ))}
-                </div>
-                
-                {/* Growth trend line */}
-                <div className="absolute top-0 left-0 w-full h-48 pointer-events-none">
-                  <svg className="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
-                    <polyline
-                      fill="none"
-                      stroke="#f4d35e"
-                      strokeWidth="2"
-                      points="10,90 25,75 50,50 75,25 90,10"
-                      className="opacity-60"
-                    />
-                  </svg>
-                </div>
-              </div>
-            </div>
+            <GrowthProjectionChart />
           </div>
         </div>
       </section>
