@@ -432,11 +432,11 @@ function App() {
       <section className="py-20 px-6 bg-[#fffaf3]">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-[#1f1f1f] mb-4">📈 Investor Proposition</h2>
-            <p className="text-2xl font-semibold text-[#f4d35e]">Investment ask: ₹10 Cr</p>
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#1f1f1f] mb-4">📈 Investor Proposition</h2>
+            <p className="text-lg sm:text-xl lg:text-2xl font-semibold text-[#f4d35e]">Investment ask: ₹10 Cr</p>
           </div>
           
-          <div className="bg-white p-8 rounded-2xl shadow-lg">
+          <div className="bg-white p-4 sm:p-6 lg:p-8 rounded-2xl shadow-lg overflow-x-auto">
             <GrowthProjectionChart />
           </div>
         </div>
