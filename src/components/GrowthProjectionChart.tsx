@@ -41,34 +41,123 @@ const GrowthProjectionChart = () => {
     ],
   };
 
+  // Check if we're on mobile
+  const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
+
   const options = {
     responsive: true,
+    maintainAspectRatio: false,
     plugins: {
       legend: {
-        position: 'top',
+        position: isMobile ? 'bottom' : 'top',
+        labels: {
+          font: {
+            size: isMobile ? 10 : 12,
+          },
+          padding: isMobile ? 15 : 20,
+          usePointStyle: true,
+          pointStyle: 'circle',
+        },
       },
       title: {
         display: true,
-        text: 'A3T Ventures Projected Growth Trajectory (2025–2030)',
+        text: isMobile 
+          ? 'A3T Ventures Growth (2025–2030)' 
+          : 'A3T Ventures Projected Growth Trajectory (2025–2030)',
+        font: {
+          size: isMobile ? 14 : 16,
+          weight: 'bold',
+        },
+        padding: {
+          top: 10,
+          bottom: isMobile ? 15 : 20,
+        },
+      },
+      tooltip: {
+        backgroundColor: 'rgba(0, 0, 0, 0.8)',
+        titleFont: {
+          size: isMobile ? 12 : 14,
+        },
+        bodyFont: {
+          size: isMobile ? 11 : 13,
+        },
+        cornerRadius: 8,
+        displayColors: true,
       },
     },
     scales: {
       y: {
         title: {
-          display: true,
+          display: !isMobile,
           text: 'Value',
+          font: {
+            size: isMobile ? 10 : 12,
+          },
+        },
+        ticks: {
+          font: {
+            size: isMobile ? 10 : 11,
+          },
+        },
+        grid: {
+          color: 'rgba(0, 0, 0, 0.1)',
         },
       },
       x: {
         title: {
-          display: true,
+          display: !isMobile,
           text: 'Year',
+          font: {
+            size: isMobile ? 10 : 12,
+          },
         },
+        ticks: {
+          font: {
+            size: isMobile ? 10 : 11,
+          },
+        },
+        grid: {
+          color: 'rgba(0, 0, 0, 0.1)',
+        },
+      },
+    },
+    elements: {
+      point: {
+        radius: isMobile ? 3 : 4,
+        hoverRadius: isMobile ? 5 : 6,
+      },
+      line: {
+        borderWidth: isMobile ? 2 : 3,
       },
     },
   };
 
-  return <Line data={data} options={options} />;
+  return (
+    <div className="w-full">
+      {/* Mobile: smaller height, Desktop: larger height */}
+      <div className="h-64 sm:h-80 md:h-96 lg:h-[500px] w-full">
+        <Line data={data} options={options} />
+      </div>
+      
+      {/* Mobile-specific legend for better readability on small screens */}
+      {isMobile && (
+        <div className="mt-4 grid grid-cols-1 gap-2 text-xs">
+          <div className="flex items-center gap-2">
+            <div className="w-3 h-3 bg-blue-500 rounded-full"></div>
+            <span>Capital Deployed (₹ Cr)</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <div className="w-3 h-3 bg-orange-500 rounded-full"></div>
+            <span>Rental Income (₹ Lakh/year)</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <div className="w-3 h-3 bg-green-500 rounded-full"></div>
+            <span>Net Profit (₹ Lakh/year)</span>
+          </div>
+        </div>
+      )}
+    </div>
+  );
 };
 
 export default GrowthProjectionChart;
